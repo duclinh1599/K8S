@@ -1,0 +1,56 @@
+-----------Pod------------
+
+Pod là đơn vị triển khai nhỏ nhất và đơn giản nhất trong Kubernetes. Nó đại diện cho một ứng dụng đang chạy hoặc một đơn vị dịch vụ
+
+Chạy một hoặc nhiều container:
+- Mỗi Pod có thể chứa một hoặc nhiều container, thường là các container có liên quan và chia sẻ tài nguyên với nhau.
+- Các container trong một Pod chia sẻ cùng không gian mạng (network namespace) và hệ thống tệp (filesystem volumes), cho phép chúng dễ dàng giao tiếp và chia sẻ dữ liệu.
+
+Quản lý tài nguyên và cấu hình cho container:
+- Pod định nghĩa các tài nguyên (CPU, RAM) mà container cần sử dụng và các cấu hình như biến môi trường, volume mounts và các cấu hình mạng.
+- Đảm bảo rằng các container trong Pod có thể truy cập và sử dụng tài nguyên một cách hiệu quả.
+
+Quản lý vòng đời container:
+- Pod quản lý vòng đời của container, bao gồm khởi động, chạy và dừng container.
+- Kubernetes sử dụng các Pod để theo dõi và đảm bảo rằng container luôn trong trạng thái mong muốn.
+
+Cung cấp khả năng mở rộng và tự phục hồi:
+- Pods có thể được triển khai và mở rộng để đáp ứng nhu cầu tải công việc.
+- Kubernetes tự động quản lý và phục hồi Pod nếu chúng gặp sự cố hoặc bị lỗi. 
+
+
+------------Replicaset-------------
+ReplicaSet là một trong những thành phần cơ bản của Kubernetes, chịu trách nhiệm duy trì số lượng bản sao (replicas) cụ thể của các Pod đang chạy.
+
+Duy trì số lượng bản sao của Pod:
+- ReplicaSet đảm bảo rằng số lượng Pod mong muốn luôn luôn chạy trong hệ thống. 
+- Nếu có bất kỳ Pod nào bị xóa hoặc gặp sự cố, ReplicaSet sẽ tự động tạo ra các Pod mới để thay thế.
+
+Tự động tạo và xóa Pod:
+- Khi số lượng Pod hiện tại ít hơn số lượng mong muốn, ReplicaSet sẽ tạo thêm các Pod mới và ngược lại.
+
+Cân bằng tải và khả năng chịu lỗi:
+- ReplicaSet giúp phân phối tải công việc giữa các Pod, đảm bảo rằng các yêu cầu được xử lý đồng đều.
+- Trong trường hợp một Pod gặp sự cố hoặc không khả dụng, các Pod khác do ReplicaSet quản lý sẽ tiếp tục xử lý công việc, đảm bảo tính sẵn sàng của ứng dụng.
+
+Tự động cập nhật Pod:
+- Khi cấu hình của ReplicaSet thay đổi, nó có thể tự động cập nhật các Pod để phản ánh những thay đổi này. 
+- Tuy nhiên, đối với các bản cập nhật phức tạp, thường sử dụng Deployment để quản lý quá trình cập nhật.
+
+----------------Deployment--------------
+Deployment trong Kubernetes là một đối tượng cấp cao được sử dụng để quản lý việc triển khai và cập nhật các ứng dụng container hóa một cách dễ dàng và hiệu quả
+
+Quản lý việc triển khai ứng dụng:
+- Deployment tự động quản lý quá trình triển khai các phiên bản mới của ứng dụng mà không làm gián đoạn dịch vụ.
+- Deployment giúp người dùng dễ dàng tạo ra nhiều bản sao (replica) của các Pod để đảm bảo tính sẵn sàng và khả năng chịu lỗi của ứng dụng.
+
+Cập nhật ứng dụng một cách dễ dàng:
+- Deployment hỗ trợ cập nhật rolling update (cập nhật cuốn chiếu), trong đó các phiên bản cũ của ứng dụng sẽ dần được thay thế bởi các phiên bản mới mà không làm gián đoạn dịch vụ.
+- Hỗ trợ rollback (quay lại phiên bản trước) trong trường hợp cập nhật gặp sự cố.
+
+Quản lý và duy trì trạng thái mong muốn:
+- Deployment đảm bảo rằng trạng thái hiện tại của các Pod luôn khớp với trạng thái mong muốn đã được định nghĩa trong cấu hình.
+- Nếu bất kỳ Pod nào gặp sự cố hoặc bị xóa, Deployment sẽ tự động tạo lại các Pod mới để thay thế.
+
+Mở rộng và thu nhỏ số lượng Pod:
+Deployment hỗ trợ việc mở rộng (scale out) hoặc thu nhỏ (scale in) số lượng Pod một cách dễ dàng, giúp ứng dụng có thể xử lý được sự thay đổi về tải công việc.
