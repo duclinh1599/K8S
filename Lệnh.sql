@@ -1,3 +1,16 @@
+- Lệnh tạo pod
+    kubectl run <pod name> --image=<image name> --port=<port to expose>
+- Expose 
+    kubectl expose pod hello-kube --type=LoadBlancer --port=80
+    kubectl expose <resource kind to expose> <resource name> --type=<type of service to create> --port=<port to expose>
+- Để truy cập vào bằng web
+    minikube service hello-kube url
+
+
+
+
+
+
 --------Replicaset----------
 
 
@@ -10,3 +23,6 @@
     kubectl get deployments
 - Kiểm tra status triển khai:
     kubectl rollout status deployment
+
+-----Tham Khao-----
+https://www.freecodecamp.org/news/the-kubernetes-handbook/
