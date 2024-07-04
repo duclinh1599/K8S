@@ -23,7 +23,8 @@
     kubectl get deployments
 - Kiểm tra status triển khai:
     kubectl rollout status deployment
-
+- Kiểm tra log pod/service/deployment:
+    kubectl logs <pod>
 -----Tham Khao-----
 https://www.freecodecamp.org/news/the-kubernetes-handbook/
 https://www.freecodecamp.org/news/the-docker-handbook/
