@@ -28,3 +28,4 @@
 -----Tham Khao-----
 https://www.freecodecamp.org/news/the-kubernetes-handbook/
 https://www.freecodecamp.org/news/the-docker-handbook/
+https://www.geeksforgeeks.org/kubernetes-tutorial/?ref=lbp ( tutorial )
