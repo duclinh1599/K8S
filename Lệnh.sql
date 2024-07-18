@@ -25,7 +25,10 @@
     kubectl rollout status deployment
 - Kiểm tra log pod/service/deployment:
     kubectl logs <pod>
+
+    
 -----Tham Khao-----
 https://www.freecodecamp.org/news/the-kubernetes-handbook/
 https://www.freecodecamp.org/news/the-docker-handbook/
 https://www.geeksforgeeks.org/kubernetes-tutorial/?ref=lbp ( tutorial )
+https://www.geeksforgeeks.org/kubectl-cheatsheet/ ( Tổng hợp lệnh K8s)
