@@ -1,0 +1,19 @@
+----Triển khai----
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f nginx-service.yaml
+
+------Kiểm tra-------
+kubectl get deployments
+kubectl get pods
+kubectl get services
+
+-------Truy cập ứng dụng-------
+minikube service nginx-service
+
+
+------------ Tóm tắt --------------
+1. Tạo Deployment để quản lý các pod.
+2. Tạo Service để expose ứng dụng.
+3. Sử dụng kubectl apply để triển khai các tài nguyên.
+4. Kiểm tra trạng thái của các pod và service.
+5. Truy cập ứng dụng qua địa chỉ IP hoặc thông qua Minikube.
