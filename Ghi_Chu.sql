@@ -32,3 +32,5 @@ https://www.freecodecamp.org/news/the-kubernetes-handbook/
 https://www.freecodecamp.org/news/the-docker-handbook/
 https://www.geeksforgeeks.org/kubernetes-tutorial/?ref=lbp ( tutorial )
 https://www.geeksforgeeks.org/kubectl-cheatsheet/ ( Tổng hợp lệnh K8s)
+
+https://viblo.asia/p/k8s-basic-cai-dat-lab-kubernetes-phan-1-3kY4gWdy4Ae
