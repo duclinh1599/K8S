@@ -1,56 +1,56 @@
 ## 0. Command thông dụng
 
-        kubectl run --generator=run-pod/v1 --rm mytest --image=yauritux/busybox-curl -it
+    kubectl run --generator=run-pod/v1 --rm mytest --image=yauritux/busybox-curl -it
 
-        kubectl run my-nginx --restart=Never --image=nginx --port=80 --expose : Chạy NGINX và expose nó
+    kubectl run my-nginx --restart=Never --image=nginx --port=80 --expose : Chạy NGINX và expose nó
 
-        kubectl run my-nginx --image=nginx --port=80 --expose
+    kubectl run my-nginx --image=nginx --port=80 --expose
 
-        kubectl get nodes --show-labels
+    kubectl get nodes --show-labels
 
-        kubectl get pods -l owner=denny
+    kubectl get pods -l owner=denny
 
-        kubectl label pods dummy-input owner=denny
+    kubectl label pods dummy-input owner=denny
 
-        kubectl scale --replicas=3 deployment/nginx-app
+    kubectl scale --replicas=3 deployment/nginx-app
 
-        kubectl rollout app-v1 app-v2 --image=img:v2
+    kubectl rollout app-v1 app-v2 --image=img:v2
 
-        kubectl rollout app-v1 app-v2 --rollback
+    kubectl rollout app-v1 app-v2 --rollback
 
-        kubectl rollout status deployment/nginx-app - Check update status
+    kubectl rollout status deployment/nginx-app - Check update status
 
-        kubectl rollout history deployment/nginx-app - Check update history
+    kubectl rollout history deployment/nginx-app - Check update history
 
-        kubectl rollout pause/resume deployment/nginx-deployment
+    kubectl rollout pause/resume deployment/nginx-deployment
 
-        kubectl rollout undo deployment/nginx-deployment -Quay lại version trước
+    kubectl rollout undo deployment/nginx-deployment -Quay lại version trước
 
 ## 1. Cluster managament
 
-        Kubectl cluster-info : Hiển thị thông tin điểm cuối về máy chủ và dịch vụ trong cụm
+    Kubectl cluster-info : Hiển thị thông tin điểm cuối về máy chủ và dịch vụ trong cụm
 
-        Kubectl version
+    Kubectl version
 
-        Kubectl config view : lấy config của cụm
+    Kubectl config view : lấy config của cụm
 
-        kubectl api-resources
+    kubectl api-resources
 
-        kubectl get all --all-namespaces :list tất cả mọi thứ
+    kubectl get all --all-namespaces :list tất cả mọi thứ
 
 ## 2. Daemonsets (ds)
 
-        kubectl get daemonset : list 1 or nhiều daemonset
+    kubectl get daemonset : list 1 or nhiều daemonset
 
-        kubectl edit daemonset <daemonset_name> : Chỉnh sửa và cập nhật định nghĩa của một hoặc nhiều daemonset
+    kubectl edit daemonset <daemonset_name> : Chỉnh sửa và cập nhật định nghĩa của một hoặc nhiều daemonset
 
-        kubectl delete daemonset <daemonset_name>
+    kubectl delete daemonset <daemonset_name>
 
-        kubectl create daemonset <daemonset_name>
+    kubectl create daemonset <daemonset_name>
 
-        kubectl rollout daemonset
+    kubectl rollout daemonset
 
-        kubectl describe ds <daemonset_name> -n <namespace_name>
+    kubectl describe ds <daemonset_name> -n <namespace_name>
 
 ## 3. Deployment (deploy)
 
@@ -128,9 +128,9 @@
 
 ## 10. Service
 
-    kubectl get services
+        kubectl get services
 
-    kubectl expose deployment [deployment_name] – Expose a
-    replication controller, service, deployment, or pod as a new Kubernetes service.
+        kubectl expose deployment [deployment_name] – Expose a
+        replication controller, service, deployment, or pod as a new Kubernetes service.
 
-    kubectl edit services
+        kubectl edit services
