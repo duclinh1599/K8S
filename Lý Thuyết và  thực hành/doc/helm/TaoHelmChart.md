@@ -37,7 +37,7 @@
             mkdir -p example-project/templates/deployment
             mkdir -p example-project/templates/service
 
-![2](/image/2.png)
+![2](../../image/2.png)
 
 ## 5. Tạo 2 file coffee-dpl.yaml trong deployment và coffee-service.yaml trong thư mục service:
 
@@ -100,29 +100,29 @@
 
 --
 
-![3](/image/3.png)
+![3](../../image/3.png)
 
 ## 8. Khi xác nhận không có lỗi ta sẽ deploy
 
         helm install example-project example-project
 
-![4](/image/4.png)
+![4](../../image/4.png)
 
 - Kiểm tra các status của svc,deploy, pod
 
           kubectl get svc,po,deploy
 
-  ![5](/image/5.png)
+  ![5](../../image/5.png)
 
 - Ta test thử nội dung của nginx
 
         kubectl describe svc coffee-s
 
-  ![6](/image/6.png)
+  ![6](../../image/6.png)
 
 - curl 172.16.171.82
 
-  ![7](/image/7.png)
+  ![7](../../image/7.png)
 
 ## Khi chúng ta update helm mà bị lỗi thì ta có thể rollback lại phiên bản cũ
 
