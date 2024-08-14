@@ -1,3 +1,5 @@
+https://viblo.asia/p/helm-la-gi-no-co-lien-quan-gi-den-series-nay-Do754oAQlM6
+
 ## 1. Tạo ra 1 helm chart bằng lệnh:
 
         helm create example-project
