@@ -4,7 +4,7 @@
 
 - Ta sẽ 1 thư mục example-project gồm các file như hình sau:
 
-![1](./Lý Thuyết và thực hành/image/1.png)
+![1](../image/1.png)
 
 - Tuỳ chỉnh theo ý mình trong file template default sẽ có:
 
