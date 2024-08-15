@@ -30,12 +30,12 @@
 
   Trong đó:
 
-  - hostAliases: Giống như ta khai báo host trong file /etc/hosts của máy chủ vậy. Nhưng ở đây ta khai báo cho Pod
-  - initContainers: Khai báo thông tin của initContainer (nếu có)
-  - container: Định nghĩa thông tin chi tiết cho các container của Pod.
-  - volumes: Khai báo Volume cho Pod. Volume có thể lấy từ configmap, từ PVC.. Các phần này sẽ được đề cập sau khi ta làm quen với PV/PVC
-  - restartPolicy: Có 3 giá trị là Always, OnFailure, và Never.
-  - affinity: Là đối tượng khai báo các thuộc tính liên quan tới schedule Pod
+  - `hostAliases`: Giống như ta khai báo host trong file /etc/hosts của máy chủ vậy. Nhưng ở đây ta khai báo cho Pod
+  - `initContainers`: Khai báo thông tin của initContainer (nếu có)
+  - `container`: Định nghĩa thông tin chi tiết cho các container của Pod.
+  - `volumes`: Khai báo Volume cho Pod. Volume có thể lấy từ configmap, từ PVC.. Các phần này sẽ được đề cập sau khi ta làm quen với PV/PVC
+  - `restartPolicy`: Có 3 giá trị là Always, OnFailure, và Never.
+  - `affinity`: Là đối tượng khai báo các thuộc tính liên quan tới schedule Pod
 
 --> Lưu ý rằng thông tin container name, image là bắt buộc còn lại là optional.
 
