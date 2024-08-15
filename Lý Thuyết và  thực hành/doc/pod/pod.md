@@ -53,6 +53,7 @@
 
         #Log của pod tên là pod-name
         kubectl logs pod/pod-name
+  
         #Log tất cả các Pod có label là app=pod-name
         kubectl logs -l "app=pod-name"
 
