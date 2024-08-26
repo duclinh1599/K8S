@@ -56,6 +56,12 @@
   
         #Log tất cả các Pod có label là app=pod-name
         kubectl logs -l "app=pod-name"
+- Thay đổi tham số trong file pod:
+
+        kubectl edit pod/<name_pod>
+- Xem chi tiết:
+
+        kubectl describe pod/<name_pod>
 
 ## 4. `Scalling`
 
