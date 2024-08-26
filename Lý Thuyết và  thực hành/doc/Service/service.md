@@ -86,9 +86,9 @@ Sau khi tạo pod và service thì chúng ta kiểm tra **kubectl get service**:
             app: myapp
             type: front-end
           ports:
-            - targetPort: 80  #Là port của Pod, service sẽ chuyển tiếp kết nối vào đây
-            port: 80 #Là port được mở của Service. Client sẽ kết nối với Service qua port
-            nodePort: 32333 #cổng được mở trên node để nhận request cho service
+            - targetPort: 80       #Là port của Pod, service sẽ chuyển tiếp kết nối vào đây
+              port: 80             #Là port được mở của Service. Client sẽ kết nối với Service qua port
+              nodePort: 32333      #cổng được mở trên node để nhận request cho service
 
 Sau khi tạo chúng ta kiểm tra:
 
