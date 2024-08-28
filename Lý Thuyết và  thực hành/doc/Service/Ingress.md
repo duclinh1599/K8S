@@ -12,7 +12,7 @@ Dùng để giải quyết các vấn đề mà Node Port đang gặp phải:
 - Việc phân luồng dữ liệu này được quản lý bởi các "rule" được định nghĩa ở các tài nguyên Ingress trên k8s.
 - Mà việc phân luồng được thực hiện bởi _Ingress Controller_ là _opensource_ cài trên k8s.
 
-  ![ig1](../image/ig1.png)
+  ![ig1](../../image/ig1.png)
 
 ### _Cơ chế hoạt động của Ingress_
 
