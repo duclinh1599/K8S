@@ -94,3 +94,13 @@ Lệnh xem lại key để join
 Để worker join một cluter mới thì ta cần reset cluster cũ đi bằng lệnh:
 
     sudo kubeadm reset
+    
+## `7. Tham khảo`
+https://medium.com/@kvihanga/how-to-set-up-a-kubernetes-cluster-on-ubuntu-22-04-lts-433548d9a7d0
+
+https://www.linuxtechi.com/install-kubernetes-on-ubuntu-22-04/
+
+https://github.com/kubernetes/kubernetes/issues/123673
+
+https://k21academy.com/docker-kubernetes/
+container-runtime-is-not-running/
