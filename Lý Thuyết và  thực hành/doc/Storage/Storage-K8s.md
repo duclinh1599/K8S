@@ -180,3 +180,7 @@ _d. Kiểm tra_
 
 ![pv7](../../image/pv7.png)
 
+
+### `Các loại lưu trữ`
+
+![pv8](../../image/pv8.png)
