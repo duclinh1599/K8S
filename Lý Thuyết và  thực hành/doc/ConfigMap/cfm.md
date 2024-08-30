@@ -3,8 +3,10 @@
 ## 1. `Khái niệm`
 
 - Là một tài nguyên mức namespace trên k8s dùng để lưu trữ các dữ liệu dạng key-value.
+
 - Pod có thể sử dụng configmaps dưới dạng các biến môi trường, dùng như tham số trong câu lệnh commandline trong pod
 
+- Giúp thống nhất thông tin giữa các Pod/Container.
 ---> Lưu ý `configmap không mã hóa dữ liệu, dữ liệu lưu trong configmap dưới dạng plain text`.
 
 - Sử dụng configmap giúp cho ứng dụng trở nên linh động hơn. Các tham số của ứng dụng đều được cấu hình từ các biến môi trường hoặc từ file config.
