@@ -55,10 +55,38 @@
         group: logtt
         mode: '0755'
       with_items:
+        - /u01/logtt/docker-compose/elasticsearch
+        - /u01/logtt/docker-compose/kafka-zookeeper
+        - /u01/logtt/docker-compose/kafka-connect
+        - /u01/logtt/docker-compose/kibana
+		
         - /u02/logtt/elasticsearch/data
         - /u02/logtt/elasticsearch/log
+        - /u02/logtt/elasticsearch/secret
+		
         - /u03/logtt/elasticsearch/data
         - /u03/logtt/elasticsearch/log
+        - /u03/logtt/elasticsearch/secret
+		
+        - /u04/logtt/kafka/data
+        - /u04/logtt/kafka/log
+        - /u04/logtt/kafka/secret
+        - /u04/logtt/kafka-connect/data
+        - /u04/logtt/kafka-connect/log
+        - /u04/logtt/kafka-connect/secret
+        - /u04/logtt/kibana/data
+        - /u04/logtt/kibana/log
+        - /u04/logtt/kibana/secret
+
+
+    - name: Set permissions for /u01/logtt
+      file:
+        path: /u01/logtt/docker-compose
+        owner: logtt
+        group: logtt
+        mode: '0777'
+        recurse: yes
+
 
     - name: Set permissions for /u02/logtt
       file:
@@ -75,3 +103,12 @@
         group: logtt
         mode: '0777'
         recurse: yes
+
+     - name: Set permissions for /u04/logtt
+      file:
+        path: /u04/logtt
+        owner: logtt
+        group: logtt
+        mode: '0777'
+        recurse: yes
+
