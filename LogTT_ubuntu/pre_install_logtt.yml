@@ -1,0 +1,72 @@
+- name: Setup user logtt and Docker configurations
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create user logtt
+      user:
+        name: logtt
+        password: "{{ 'Vtlog!@2021' | password_hash('sha512') }}"
+        shell: /bin/bash
+        home: /u02/logtt
+
+    - name: Add user logtt to sudo and docker groups
+      user:
+        name: logtt
+        groups: "sudo,docker"
+        append: yes
+
+    - name: Allow logtt to manage Docker without password
+      lineinfile:
+        path: /etc/sudoers
+        line: "logtt ALL=(root) NOPASSWD: /usr/bin/systemctl restart docker, /usr/bin/systemctl stop docker, /usr/bin/systemctl start docker"
+        validate: "visudo -cf %s"
+
+    - name: Copy daemon.zip to /etc/docker and unzip
+      copy:
+        src: /u01/laboratory/linhnd47/ansible/Dell/inventory/daemon.json
+        dest: /etc/docker
+
+    - name: Reload and restart Docker daemon
+      command: systemctl daemon-reload  systemctl restart docker
+	  
+    - name: Restart docker
+      command: systemctl restart docker
+
+    - name: Copy .bash files to new home directory
+      copy:
+        src: "/home/logtt/{{ item }}"
+        dest: /u02/logtt/
+      with_items:
+        - .bash_logout
+        - .bash_profile
+        - .bashrc
+
+    - name: Create Elasticsearch directories in /u02/logtt and /u03/logtt
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: logtt
+        group: logtt
+        mode: '0755'
+      with_items:
+        - /u02/logtt/elasticsearch/data
+        - /u02/logtt/elasticsearch/log
+        - /u03/logtt/elasticsearch/data
+        - /u03/logtt/elasticsearch/log
+
+    - name: Set permissions for /u02/logtt
+      file:
+        path: /u02/logtt
+        owner: logtt
+        group: logtt
+        mode: '0777'
+        recurse: yes
+
+    - name: Set permissions for /u03/logtt
+      file:
+        path: /u03/logtt
+        owner: logtt
+        group: logtt
+        mode: '0777'
+        recurse: yes
