@@ -104,7 +104,7 @@
         mode: '0777'
         recurse: yes
 
-     - name: Set permissions for /u04/logtt
+    - name: Set permissions for /u04/logtt
       file:
         path: /u04/logtt
         owner: logtt
