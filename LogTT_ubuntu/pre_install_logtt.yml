@@ -1,7 +1,12 @@
 - name: Setup user logtt and Docker configurations
   hosts: all
   become: yes
+  become_user: root
+  become_method: sudo
+  become_flags: "-i"
+  gather_facts: no
 
+  
   tasks:
     - name: Create user logtt
       user:
