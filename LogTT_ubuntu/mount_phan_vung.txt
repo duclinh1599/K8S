@@ -1,0 +1,54 @@
+---- tu 167 - 175 ------
+sudo su
+vgcreate lv-ubuntu /dev/sda
+
+echo 'y' | lvcreate -n u02 -L 29T lv-ubuntu
+echo 'y' | lvcreate -n u03 -L 29T lv-ubuntu
+echo 'y' | lvcreate -n u04 -L 29T lv-ubuntu
+echo 'y' | lvcreate -n u05 -L 29T lv-ubuntu
+mkfs.xfs /dev/lv-ubuntu/u02
+mkfs.xfs /dev/lv-ubuntu/u03
+mkfs.xfs /dev/lv-ubuntu/u04
+mkfs.xfs /dev/lv-ubuntu/u05
+mkdir -p /u02
+mkdir -p /u03
+mkdir -p /u04
+mkdir -p /u05
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u02 /u02 xfs defaults 0 0' /etc/fstab
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u03 /u03 xfs defaults 0 0' /etc/fstab
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u04 /u04 xfs defaults 0 0' /etc/fstab
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u05 /u01 xfs defaults 0 0' /etc/fstab
+mount /dev/lv-ubuntu/u02 /u02
+mount /dev/lv-ubuntu/u03 /u03
+mount /dev/lv-ubuntu/u04 /u04
+mount /dev/lv-ubuntu/u05 /u05
+
+------- 176 -> 182 ------------
+
+sudo su
+vgcreate lv-ubuntu /dev/sda
+
+
+echo 'y' | lvcreate -n u02 -L 6T lv-ubuntu
+echo 'y' | lvcreate -n u03 -L 6T lv-ubuntu
+echo 'y' | lvcreate -n u04 -L 6T lv-ubuntu
+
+mkfs.xfs /dev/lv-ubuntu/u02
+mkfs.xfs /dev/lv-ubuntu/u03
+mkfs.xfs /dev/lv-ubuntu/u04
+
+mkdir -p /u02
+mkdir -p /u03
+mkdir -p /u04
+
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u02 /u02 xfs defaults 0 0' /etc/fstab
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u03 /u03 xfs defaults 0 0' /etc/fstab
+sed -i '/swap/i /dev/mapper/lv-ubuntu-u04 /u04 xfs defaults 0 0' /etc/fstab
+
+mount /dev/lv-ubuntu/u02 /u02
+mount /dev/lv-ubuntu/u03 /u03
+mount /dev/lv-ubuntu/u04 /u04
+
+
+
+
