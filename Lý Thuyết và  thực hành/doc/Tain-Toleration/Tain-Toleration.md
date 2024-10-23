@@ -53,9 +53,9 @@ Cấu trúc Toleration:
 
         kubectl run nginx --image=nginx
 
-Ta thấy bị lỗi do tạo tain trên node
+    Ta thấy bị lỗi do tạo tain trên node
 
-![tain1](../../image/tain1.png)
+    ![tain1](../../image/tain1.png)
 
 3.  Tạo 1 pod mới sử dụng toleration
 
