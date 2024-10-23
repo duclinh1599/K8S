@@ -76,3 +76,23 @@ Cấu trúc Toleration:
 Muốn untain ta sử dụng lệnh sau:
 
         kubectl taint nodes node1 key1=value1:NoSchedule-
+
+## `5.Selector`
+- NodeSelector là cách đơn giản nhất để chỉ định rằng một pod chỉ nên chạy trên các node đáp ứng một số nhãn cụ thể.
+- Khi bạn sử dụng NodeSelector, Kubernetes chỉ lên lịch pod trên các node có nhãn khớp với yêu cầu của NodeSelector. Nếu không có node nào phù hợp, pod sẽ không được lên lịch.
+- Cấu trúc NodeSelector rất đơn giản và chỉ yêu cầu key-value của nhãn.
+
+`Ví dụ`: Giả sử bạn có các node với nhãn `disktype=ssd`, bạn muốn pod chỉ chạy trên những node này:
+
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: example-pod
+        spec:
+          containers:
+          - name: nginx
+            image: nginx
+          nodeSelector:
+            disktype: ssd
+
+==> Tain và Toleration được sử dụng linh hoạt hơn.
