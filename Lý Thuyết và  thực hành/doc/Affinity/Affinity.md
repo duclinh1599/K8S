@@ -33,7 +33,7 @@
 
 Ở trên giá trị key ta chỉ định là `disktype`, operator là `In`, `values` là một mảng với giá trị là `ssd` => `disktype` in `ssd`.
 
-![affinity](../image/affinity.png)
+![affinity](../../image/affinity.png)
 
 #### PreferredDuringSchedulingIgnoredDuringExecution: Có thể ưu tiên deploy pod tới node nào trước hơn so với các node còn lại trong những node ta đã chọn.
 
@@ -144,7 +144,7 @@ Sau đó, ta sẽ tạo pod backend và chỉ định pod affinity để nó đ�
 
 Khi pod mà ta chỉ định `podAffinity` được deploy, nó sẽ kiếm những pod nào mà có label trong trường `matchLabels`, sau đó sẽ deploy pod tới pod đã được chọn cùng trong một node. Ta có thể tăng scope này lên bằng trường `topologyKey`.
 
-![affinity1](../image/affinity1.png)
+![affinity1](../../image/affinity1.png)
 
 ### `Pod anti-affinity`
 
@@ -175,7 +175,7 @@ Trong ví dụ này, pod sẽ không được lên lịch trên cùng node với
 
 ### So sách
 
-![affinity3](../image/affinity3.png)
+![affinity3](../../image/affinity3.png)
 
 ### Kết luận
 
