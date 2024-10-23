@@ -72,3 +72,7 @@ Cấu trúc Toleration:
             operator: "Equal"
             value: "production"
             effect: "NoSchedule"
+
+Muốn untain ta sử dụng lệnh sau:
+
+        kubectl taint nodes node1 key1=value1:NoSchedule-
