@@ -1,6 +1,6 @@
 _"Trong Kubernetes, taints và tolerations được sử dụng để kiểm soát việc lập lịch các pod vào các nút trong một cụm. Chúng giúp đảm bảo rằng chỉ một số pod nhất định được đặt trên các nút cụ thể, dựa trên các điều kiện và yêu cầu cụ thể"_
 
-![tain](../../image/tain.jbg)
+![tain2](../../image/tain2.png)
 
 ## `1.Tain`
 
