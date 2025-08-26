@@ -82,7 +82,8 @@
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
     kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
-
+### _---- 3 node làm master -----_
+    sydo kubeadm init --control-plane-endpoint "192.168.47.100:6443" --upload-certs
 ### _---- worker-----_
 
     sudo kubeadm join 192.168.218.162:6443 --token 5gps4s.oltblsjntwieboaz --discovery-token-ca-cert-hash sha256:af1b4fe77f57afb1db6ae1ba8a17746ee22867c935a2018e8e419775d2f4c205
@@ -104,3 +105,4 @@ https://github.com/kubernetes/kubernetes/issues/123673
 
 https://k21academy.com/docker-kubernetes/
 container-runtime-is-not-running/
+
