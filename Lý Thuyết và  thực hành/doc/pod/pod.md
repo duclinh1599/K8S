@@ -69,4 +69,7 @@
 - HPA tự động điều chỉnh giới hạn tài nguyên cho pod dựa trên mức sử dụng hiện tại của chúng.
 
         kubectl autoscale deployment/my-deployment --min=2 --max=10 --cpu-percent=80
-
+## 5. `Ephemeral`
+- Ephemeral containers là cung cấp một môi trường tạm thời để thực hiện các tác vụ gỡ lỗi hoặc kiểm tra với các công cụ/mô-đun không có sẵn trong container chính
+  
+      kubectl debug -it pod/<pod-name> --image=busybox --target=<tên pod muốn vào> -- sh
