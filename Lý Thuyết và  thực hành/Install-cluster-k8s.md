@@ -63,9 +63,9 @@
 
     sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
-    echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
 ## `6.Update the package list and install kubelet, kubeadm, and kubectl.`
 
@@ -81,7 +81,7 @@
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml
 ### _---- 3 node làm master -----_
     sydo kubeadm init --control-plane-endpoint "192.168.47.100:6443" --upload-certs
 ### _---- worker-----_
@@ -105,4 +105,5 @@ https://github.com/kubernetes/kubernetes/issues/123673
 
 https://k21academy.com/docker-kubernetes/
 container-runtime-is-not-running/
+
 
